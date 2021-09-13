@@ -8,23 +8,28 @@ export function App() {
     const [listResult, setListResult] = useState({});
     //const [numMultiplicar, setNultiplicar] = useState();
 
-    const numMultiplicar = 0 ;
+    let numMultiplicar = 0 ;
     const opciones = useRef();
 
     const btnSelecionar = () => {
-       // setNultiplicar (opciones.current.value);
+    
+    numMultiplicar = opciones.current.value;
 
-       numMultiplicar = opciones.current.value;
-       const numbers = [1, 2, 3, 4, 5];
 
-        if(numMultiplicar === ''){
-            return;
-        }
+    const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-        setListResult((preListResult) => {
-            const doubled = numbers.map((number) => number * 2);
-            return doubled;
-        })
+    setListResult((preListResult) => {
+        const resultado = numbers.map((number) => number * numMultiplicar);
+        return resultado;
+    })
+
+    // setNultiplicar (opciones.current.value);
+
+    /* numMultiplicar = opciones.current.value;
+
+    
+
+     */
 
     }
 
