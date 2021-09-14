@@ -1,10 +1,12 @@
 import React from 'react'
 
-export default function tabla(listTabla, numMultiplicar ) {
+export default function TablaMultiplicaciones(listTabla, numMultiplicar ) {
+    console.log(listTabla);
     return (
         <div>
+            <tabla>
             <li>
-                {
+                {  
                     listTabla.map((result) => (
                        <ul>
                             <p>1 x {numMultiplicar} ={result}</p>
@@ -12,6 +14,7 @@ export default function tabla(listTabla, numMultiplicar ) {
                     ))
                 }
             </li>  
+            </tabla>
         </div>
     )
 }

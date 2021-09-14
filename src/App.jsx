@@ -1,11 +1,11 @@
 import React, { Fragment, useRef, useState } from 'react'
-import tabla from './components/Tabla'
+import TablaMultiplicaciones from './components/TablaMultiplicaciones';
 
 
 
 export function App() {
 
-    const [listResult, setListResult] = useState({});
+    const [listResult, setListResult] = useState([1,2,3]);
     //const [numMultiplicar, setNultiplicar] = useState();
 
     let numMultiplicar = 0 ;
@@ -20,16 +20,9 @@ export function App() {
 
     setListResult((preListResult) => {
         const resultado = numbers.map((number) => number * numMultiplicar);
+        console.log(resultado);
         return resultado;
     })
-
-    // setNultiplicar (opciones.current.value);
-
-    /* numMultiplicar = opciones.current.value;
-
-    
-
-     */
 
     }
 
@@ -48,7 +41,7 @@ export function App() {
                 <option value="9">9</option>
                 <option value="10">10</option>
             </select>
-            <tabla listResult = {listResult} numMultiplicar = {1}/>
+            <TablaMultiplicaciones listResult = {listResult} numMultiplicar = {1}/>
          
           
         </Fragment>
